@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Survival Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen">
+            <h1>💧 Water Survival Challenge</h1>
+            <p>Survive 7 days with limited water. Allocate wisely across essential needs while dealing with random events.</p>
+            <button id="start-btn">Start Game</button>
+        </div>
+
+        <!-- Main Game Screen -->
+        <div id="allocation-screen" class="screen hidden">
+            <div class="top-bar">
+                <div class="timer-box">
+                    <span class="timer-label">⏲️ Time Remaining</span>
+                    <span id="timer" class="timer-value">60</span>
+                </div>
+                <button id="pause-btn" class="pause-btn">⏸️ Pause</button>
+            </div>
+            <div class="progress-section">
+                <h2>Day <span id="day-number">1</span> of 7</h2>
+                <div class="water-bar-labels">
+                    <span>💧 <b id="available-water">20</b>L Available</span>
+                    <span id="allocated-water-label">0L / 20L</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div id="water-progress-bar" class="progress-bar"></div>
+                </div>
+            </div>
+            <div id="allocation">
+                <div class="category">
+                    <div class="cat-label"><span class="cat-icon">💧</span> Drinking <span class="cat-min">Min: 2L | Ideal: 3L</span></div>
+                    <input type="range" id="drinking-slider" min="0" max="20" value="0" step="1">
+                    <span class="cat-value" id="drinking-value">0L</span>
+                </div>
+                <div class="category">
+                    <div class="cat-label"><span class="cat-icon">🍲</span> Cooking <span class="cat-min">Min: 3L | Ideal: 5L</span></div>
+                    <input type="range" id="cooking-slider" min="0" max="20" value="0" step="1">
+                    <span class="cat-value" id="cooking-value">0L</span>
+                </div>
+                <div class="category">
+                    <div class="cat-label"><span class="cat-icon">✨</span> Cleaning <span class="cat-min">Min: 2L | Ideal: 4L</span></div>
+                    <input type="range" id="cleaning-slider" min="0" max="20" value="0" step="1">
+                    <span class="cat-value" id="cleaning-value">0L</span>
+                </div>
+                <div class="category">
+                    <div class="cat-label"><span class="cat-icon">🧼</span> Hygiene <span class="cat-min">Min: 2L | Ideal: 3L</span></div>
+                    <input type="range" id="hygiene-slider" min="0" max="20" value="0" step="1">
+                    <span class="cat-value" id="hygiene-value">0L</span>
+                </div>
+            </div>
+            <button id="allocate-btn" class="confirm-btn">Confirm and Continue</button>
+            <button id="reset-btn" class="reset-btn">Reset Game</button>
+        </div>
+
+        <!-- Event Screen -->
+        <div id="event-screen" class="screen hidden">
+            <h2>Random Event!</h2>
+            <p id="event-description"></p>
+            <button id="event-continue-btn">Continue</button>
+        </div>
+
+        <!-- Outcome Screen -->
+        <div id="outcome-screen" class="screen hidden">
+            <h2>Day Outcome</h2>
+            <p id="outcome-message"></p>
+            <button id="next-day-btn">Next Day</button>
+        </div>
+
+        <!-- End Screen -->
+        <div id="end-screen" class="screen hidden">
+            <h2>Game Over</h2>
+            <p id="end-message"></p>
+            <p id="score">Water Resilience Score: <span id="score-value"></span></p>
+            <p id="fact">Charity: Water Fact: Did you know that 1 in 3 people worldwide lack access to safe drinking water?</p>
+            <button id="restart-btn">Play Again</button>
+        </div>
+
+        <!-- Pause Modal removed -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
