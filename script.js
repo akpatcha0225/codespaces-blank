@@ -99,7 +99,6 @@ const hygieneValue = document.getElementById('hygiene-value');
 // --- Event Listeners ---
 startBtn.addEventListener('click', startGame);
 allocateBtn.addEventListener('click', allocateWater);
-// Pause modal removed, so no listeners needed
 eventContinueBtn.addEventListener('click', continueAfterEvent);
 nextDayBtn.addEventListener('click', nextDay);
 restartBtn.addEventListener('click', restartGame);
